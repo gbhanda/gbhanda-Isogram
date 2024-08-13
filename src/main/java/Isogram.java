@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.List;
 
 public class Isogram {
     /**
@@ -13,6 +15,11 @@ public class Isogram {
      * @return true if str is an isogram, false otherwise.
      */
     public boolean isIsogram(String str){
-        return false;
+        List<Character> listChecked = new ArrayList<>();
+        for(int i = 0; i < str.length(); i++){
+            if(listChecked.contains(str.charAt(i))) return false;
+            else listChecked.add(str.charAt(i));
+        }
+        return true;
     }
 }
